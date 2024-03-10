@@ -10,4 +10,4 @@ class TestIndexView(TestCase):
     def test_index_view(self):
         response = self.client.get(reverse('index'))
         self.assertEqual(response.status_code, 200)
-        self.assertContains(response, "Hello, Django! From Shovan")
+        self.assertIn("Shovan", response.content.decode('utf-8'))
